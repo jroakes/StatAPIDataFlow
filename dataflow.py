@@ -282,12 +282,10 @@ def run(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument('--subdomain',
         type=str,
-        default='adaptpartners'
         required=True,
         help='Sub-domain for Stat API.')
     parser.add_argument('--api_key',
         type=str,
-        default='pHRhgOkDJ8cmKCmKKoYwPDH3'
         required=True,
         help='API key for Stat API.')
     parser.add_argument('--date',
@@ -300,12 +298,10 @@ def run(argv=None):
         help='BigQuery Dataset to write tables to. Must already exist.')
     parser.add_argument('--table_name',
         type=str,
-        default='adapt_rankings',
         help='The BigQuery table name. Should not already exist.')
     parser.add_argument('--project',
         type=str,
-        default='ap-ranking-data',
-        help='The BigQuery table name. Should not already exist.')
+        help='Your GCS project.')
     parser.add_argument('--runner',
         type=str,
         default='DataflowRunner',
