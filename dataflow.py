@@ -20,6 +20,16 @@ STAT_API_SCHEMA = [
         'mode' : 'REQUIRED'
     },
     {
+        'name' : 'ProjectName',
+        'type' : 'STRING',
+        'mode' : 'REQUIRED'
+    },
+    {
+        'name' : 'SiteUrl',
+        'type' : 'STRING',
+        'mode' : 'REQUIRED'
+    },    
+    {
         'name' : 'keyword',
         'type' : 'STRING',
         'mode' : 'REQUIRED'
@@ -199,7 +209,7 @@ class IterKeywords(beam.DoFn):
                     keyword = [keyword]
                 for k in keyword:
                     k['ProjectName'] = site['ProjectName']
-                    k['Url'] = site['Url']
+                    k['SiteUrl'] = site['Url']
                     output.append(k)
                     
             yield output
